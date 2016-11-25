@@ -13,7 +13,7 @@ function submit_question(){
 	var option = 0;
 
 	if(!$('#question').val()){ //if the question is blank
-		display_answer("gotta type, can/'t read your mind");
+		display_answer("sorry, can not read your mind rn");
 	} else if (question == last && question == last2){ //asking repeat questions
 		display_answer("DejaVu, ask someting else");
 	} else{
@@ -43,7 +43,7 @@ function display_answer(answer){
 	}
 }
 
-function shou_answer(option){
+function show_answer(option){
 
 	var answer;
 	switch(option){
@@ -54,23 +54,30 @@ function shou_answer(option){
 			answer = "Nope!";
 			break;
 		case 3:
-			answer = "Nap on it"
+			answer = "Nap on it";
 			break;
 		case 4:
-			answer = "Ask a Human"
+			answer = "Ask a Human";
 			break;
 		case 5:
-			answer = "Good as Gold"
+			answer = "Good as Gold";
 			break;
 		case 6:
-			answer = "Hold on tight"
+			answer = "Hold on tight";
 			break;
 		case 7: 
-			answer = "Bold move"
+			answer = "Bold move";
 		default:
-			answer = "Are you the Borg?"
+			answer = "Are you the Borg?";
 			break;
 	}
 	display_answer(answer);
 
 }
+
+
+/*
+	There are several different ways to check for repeats and 'is' questions.
+	Here we store the last two questions in variables, but you could use arrays to store all the asked questions and check against that.
+	We use regular expressions to check if the question begins with 'is', but String methods like String.charAt(0) could accomplish the same thing.
+	*/
